@@ -1,6 +1,7 @@
-import galleryItems from "./gallery-items.js";
+// import galleryItems from './gallery-items.js';
+import galleryItems from './js/gallery-items';
 
-function createImagesCardsMarkup(images) {
+export default function createImagesCardsMarkup(images) {
   return images
     .map(({ preview, original, description }) => {
       return `
@@ -11,55 +12,55 @@ function createImagesCardsMarkup(images) {
       </li>
       `;
     })
-    .join("");
+    .join('');
 }
 
 const itemsImagesCardsMarkup = createImagesCardsMarkup(galleryItems);
 
-const imagesList = document.querySelector("ul.js-gallery");
-imagesList.insertAdjacentHTML("beforeend", itemsImagesCardsMarkup);
-imagesList.addEventListener("click", onImagesListClick);
+// const imagesList = document.querySelector("ul.js-gallery");
+// imagesList.insertAdjacentHTML("beforeend", itemsImagesCardsMarkup);
+// imagesList.addEventListener("click", onImagesListClick);
 
-const lightboxEl = document.querySelector(".lightbox");
-const lightboxImageEl = document.querySelector(".lightbox__image");
+// const lightboxEl = document.querySelector(".lightbox");
+// const lightboxImageEl = document.querySelector(".lightbox__image");
 
-function onImagesListClick(event) {
-  event.preventDefault();
+// function onImagesListClick(event) {
+//   event.preventDefault();
 
-  const isImageSwatchEl = event.target.classList.contains("gallery__image");
-  if (!isImageSwatchEl) {
-    return;
-  }
+//   const isImageSwatchEl = event.target.classList.contains("gallery__image");
+//   if (!isImageSwatchEl) {
+//     return;
+//   }
 
-  const swatchEl = event.target;
-  const attributeSwatchEl = swatchEl.dataset.source;
+//   const swatchEl = event.target;
+//   const attributeSwatchEl = swatchEl.dataset.source;
 
-  onСhangeValueAttributeEl(attributeSwatchEl);
-  onGalleryOpenLightBox();
-}
+//   onСhangeValueAttributeEl(attributeSwatchEl);
+//   onGalleryOpenLightBox();
+// }
 
-const onGalleryOpenLightBox = () => {
-  lightboxEl.classList.add("is-open");
-};
+// const onGalleryOpenLightBox = () => {
+//   lightboxEl.classList.add("is-open");
+// };
 
-const onСhangeValueAttributeEl = (value) => {
-  lightboxImageEl.src = `${value}`;
-};
+// const onСhangeValueAttributeEl = (value) => {
+//   lightboxImageEl.src = `${value}`;
+// };
 
-const closeBtnEl = document.querySelector(
-  'button[data-action="close-lightbox"]'
-);
-closeBtnEl.addEventListener("click", onCloseBtnClick);
+// const closeBtnEl = document.querySelector(
+//   'button[data-action="close-lightbox"]'
+// );
+// closeBtnEl.addEventListener("click", onCloseBtnClick);
 
-function onCloseBtnClick(event) {
-  onGalleryCloseLightBox();
-  onCleasValueAttributeEl();
-}
+// function onCloseBtnClick(event) {
+//   onGalleryCloseLightBox();
+//   onCleasValueAttributeEl();
+// }
 
-const onGalleryCloseLightBox = () => {
-  lightboxEl.classList.remove("is-open");
-};
+// const onGalleryCloseLightBox = () => {
+//   lightboxEl.classList.remove("is-open");
+// };
 
-const onCleasValueAttributeEl = () => {
-  lightboxImageEl.src = "";
-};
+// const onCleasValueAttributeEl = () => {
+//   lightboxImageEl.src = "";
+// };
