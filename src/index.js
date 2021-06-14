@@ -1,7 +1,12 @@
-// import galleryItems from './js/gallery-items';
-import createImagesCardsMarkup from './js/gallery';
+import itemsImagesCardsMarkup from './js/createImagesCardsMarkup';
+import onImagesListClick from './js/onImagesListClick';
+import onCloseBtnClick from './js/onCloseBtnClick';
 
-const itemsImagesCardsMarkup = createImagesCardsMarkup(galleryItems);
+const imagesList = document.querySelector('ul.js-gallery');
+imagesList.insertAdjacentHTML('beforeend', itemsImagesCardsMarkup);
+imagesList.addEventListener('click', onImagesListClick);
 
-// console.log(galleryItems);
-console.log(itemsImagesCardsMarkup);
+const closeBtnEl = document.querySelector(
+  'button[data-action="close-lightbox"]',
+);
+closeBtnEl.addEventListener('click', onCloseBtnClick);
