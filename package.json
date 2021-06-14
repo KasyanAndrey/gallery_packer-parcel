@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html  --public-url /gallery_packer-parcel",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,11 @@
   "bugs": {
     "url": "https://github.com/KasyanAndrey/gallery_packer-parcel/issues"
   },
-  "homepage": "https://github.com/KasyanAndrey/gallery_packer-parcel#readme",
+  "homepage": "https://KasyanAndrey.github.io/gallery_packer-parcel",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "parcel-plugin-nuke-dist": "^1.0.1"
   }
 }
