@@ -1,17 +1,11 @@
-import galleryItems from './gallery-items';
+// import imageCardTpl from '../templates/image-card.hbs';
+import imageCardsTpl from '../templates/image-cards.hbs';
+
+import galleryItems from './gallery-items.json';
 
 function createImagesCardsMarkup(images) {
-  return images
-    .map(({ preview, original, description }) => {
-      return `
-      <li class="gallery__item">
-        <a class="gallery__link" href="${original}">
-          <img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}"/>
-        </a>
-      </li>
-      `;
-    })
-    .join('');
+  // return images.map(imageCardTpl).join(''); // image-card.hbs(для создания одной карточки)
+  return imageCardsTpl(images);
 }
 
 const itemsImagesCardsMarkup = createImagesCardsMarkup(galleryItems);

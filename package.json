@@ -19,9 +19,10 @@
   "bugs": {
     "url": "https://github.com/KasyanAndrey/gallery_packer-parcel/issues"
   },
-  "homepage": "https://KasyanAndrey.github.io/gallery_packer-parcel",
+  "homepage": "https://kasyanandrey.github.io/gallery_packer-parcel",
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2"
   },
   "dependencies": {
     "parcel-plugin-nuke-dist": "^1.0.1"
